@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MyTablw(Kareem_Abdallah)</title>
+<style>
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  th, td {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+  }
+  th {
+    background-color: #f2f2f2;
+  }
+</style>
+</head>
+<body>
+
+<table id="myTable">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Department</th>
+    </tr>
+  </thead>
+  <tbody>
+    <!-- Table body will be dynamically added here -->
+  </tbody>
+</table>
+
+<script>
+// Number of rows you want to create
+const numRows = 5;
+
+// Function to create table rows
+function createTable() {
+  let tableBody = document.querySelector("#myTable tbody");
+
+  for (let i = 1; i <= numRows; i++) {
+    let row = document.createElement("tr"); // Create a table row
+
+    let IDCell = document.createElement("td"); // Create a table cell for index
+    IDCell.textContent = i; // Set the content of the cell to the index
+    row.appendChild(IDCell); // Append the index cell to the row
+
+    let NameCell = document.createElement("td"); // Create a table cell for value
+    NameCell.textContent = "Name " + i; // Set the content of the cell to a value
+    row.appendChild(NameCell); // Append the value cell to the row
+
+    
+    let DepCell = document.createElement("td"); // Create a table cell for value
+    DepCell .textContent = "Department " + i; // Set the content of the cell to a value
+    row.appendChild(DepCell );
+
+    tableBody.appendChild(row); // Append the row to the table body
+
+  }
+}
+
+// Call the function to create the table
+createTable();
+</script>
+
+</body>
+</html>
